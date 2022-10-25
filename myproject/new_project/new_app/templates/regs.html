@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1>Register Here</h1>
+<form method="POST"> {% csrf_token %}
+    Name<input type="text" name="nme"><br><br>
+    Address<textarea name="add"></textarea><br><br>
+    Email<input type="email" name="eml"><br><br>
+    Username<input type="text" name="usr"><br><br>
+    Password<input type="password" name="psw"><br><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

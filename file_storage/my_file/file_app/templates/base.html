@@ -30,15 +30,22 @@
 			<div class="wrapper">
 				<div class="header">
 					<div class="logo">
-						<a class="brand-logo">Data Dive</a>
+						<a class="brand-logo" href="{% url 'home' %}">Data Dive</a>
 					</div>
 					<div class="w3lhny-button text-right">
-						<a class="alive-btn" href="{% url 'upload' %}">Upload Here</a>
+						<a class="alive-btn" href="{% url 'list_data' %}">Uploaded Files</a>
 					</div>
+					<form action="{% url 'search' %}">
+						{% csrf_token %}
+						<input class="form-control me-2" type="search" placeholder="Search" name="searched" aria-label="Search">
+						<button class="btn btn-outline-secondary" type="submit">Search</button>
+					</form>
 				</div>
 				<div class="coming-block">
-					<h1>Data will Talk to You, If you're willing to Listen</h1>
-					<h2 class="parahny">- Jim Bergeson</h2>
+					<div class="card-body">
+						{% block content %}
+						{% endblock %}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -76,6 +83,9 @@
 				}, 1000);
 			})();
 		</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	</section>
 	<!-- //coming-61-w3l-vv-section -->

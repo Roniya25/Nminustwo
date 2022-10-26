@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Uploaded Files</h1>
+<div class="w3lhny-button text-right">
+    <a class="alive-btn" href="{% url 'upload' %}">Upload more</a>
+</div>
+<table align="center" width="200" height="200">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Uploaded file</th>
+    </tr>
+    {% for i in all_data %}
+    <tr>
+        <td>{{ i.Name }}</td>
+        <td>{{ i.Description }}</td>
+        <td>
+            <a href="{{ i.Upload_file.url }}">{{ i.Upload_file.url }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

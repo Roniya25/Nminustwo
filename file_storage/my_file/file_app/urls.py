@@ -18,5 +18,8 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    url(r'^home/', home),
+    url(r'^home/', home, name='home'),
+    url(r'^upload/', upload, name='upload'),
+    url(r'^list/', list_data, name='list_data'),
+    url(r'^search/', search, name='search'),
 ]

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if searched %}
+    <h1>Search result of {{ searched }}</h1>
+    <br><br>
+        <table align="center" width="200" height="200">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Uploaded file</th>
+        </tr>
+        {% for i in name %}
+            <tr>
+                <td>{{ i.Name }}</td>
+                <td>{{ i.Description }}</td>
+                <td>
+                    <a href="{{ i.Upload_file.url }}">{{ i.Upload_file.url }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% else %}
+    <h1>Nothing to Found</h1>
+{% endif %}
+{% endblock %}
